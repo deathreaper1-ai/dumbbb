@@ -1,0 +1,68 @@
+/* Style the body */
+body {
+  background-color: #000; /* Dark background */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars */
+  font-family: Arial, sans-serif;
+  color: #fff; /* White text color */
+}
+
+/* Style the stars and connection lines */
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star,
+.star-connection {
+  position: absolute;
+}
+
+.star {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #fff; /* White stars */
+  animation: twinkle 1s infinite alternate;
+}
+
+.star-connection {
+  width: 0;
+  height: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Low opacity white line */
+  pointer-events: none; /* Don't interact with lines */
+}
+
+/* Star animation (blinking effect) */
+@keyframes twinkle {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+
+/* Style the constellation text */
+.constellation {
+  position: absolute;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px; /* Spacing between letters */
+}
+
+/* Happy Birthday Dumbo constellation positioning */
+.constellation.happy {
+  top: 30%;
+  left: 20%;
+}
+
+.constellation.birthday {
+  top: 50%;
+  left: 40%;
+}
+
+.constellation.dumbo {
+  top: 70%;
+  right: 30%;
+}
