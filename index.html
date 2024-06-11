@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dumboo!</title>
+    <style>
+        body {
+            background: url('shark-pattern.png') repeat;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #f39c12;
+            padding: 20px;
+            font-size: 3em;
+            color: white;
+        }
+        .animated-text {
+            font-size: 2em;
+            margin-top: 20px;
+            animation: wiggle 1s infinite;
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .cake {
+            width: 300px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .shark {
+            position: absolute;
+            top: -50px;
+            width: 100px;
+        }
+        footer {
+            background-color: #2ecc71;
+            padding: 10px;
+            color: white;
+            font-size: 1.5em;
+        }
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>Happy Birthday Dumboo!</header>
+    <nav>
+        <a href="gallery.html">Gallery</a>
+        <a href="games.html">Games</a>
+        <a href="messages.html">Messages</a>
+    </nav>
+    <main>
+        <div class="animated-text">Happy Birthday Dumboo!</div>
+        <div class="cake">
+            <img src="cake.png" alt="Birthday Cake">
+            <img src="shark.png" alt="Shark" class="shark">
+        </div>
+    </main>
+    <footer>Have a Dum-tastic Birthday!</footer>
+    <canvas class="confetti"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Confetti animation
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    </script>
+</body>
+</html>

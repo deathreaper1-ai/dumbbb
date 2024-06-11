@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Happy Birthday Dumboo</title>
+    <style>
+        body {
+            background: url('shark-pattern.png') repeat;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #f39c12;
+            padding: 20px;
+            font-size: 3em;
+            color: white;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1.2em;
+        }
+        .messages {
+            margin-top: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            border: 2px solid #3498db;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #ecf0f1;
+        }
+        .form {
+            margin-top: 20px;
+        }
+        .form input, .form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>Happy Birthday Dumboo!</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="games.html">Games</a>
+        <a href="messages.html">Messages</a>
+    </nav>
+    <main>
+        <div class="messages">
+            <div class="message">
+                <strong>John:</strong> Happy Birthday, Dumboo! Hope you have a fantastic day!
+            </div>
+            <div class="message">
+                <strong>Jane:</strong> Wishing you a Dum-tastic birthday!
+            </div>
+        </div>
+        <div class="form">
+            <input type="text" id="name" placeholder="Your Name">
+            <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+            <button onclick="addMessage()">Send Message</button>
+        </div>
+    </main>
+    <script>
+        function addMessage() {
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            if (name && message) {
+                const messagesDiv = document.querySelector('.messages');
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message');
+                newMessage.innerHTML = `<strong>${name}:</strong> ${message}`;
+                messagesDiv.appendChild(newMessage);
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please enter both name and message.');
+            }
+        }
+    </script>
+</body>
+</html>

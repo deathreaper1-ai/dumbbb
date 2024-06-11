@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Happy Birthday Dumboo</title>
+    <style>
+        body {
+            background: url('shark-pattern.png') repeat;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #f39c12;
+            padding: 20px;
+            font-size: 3em;
+            color: white;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1.2em;
+        }
+        .game {
+            margin-top: 20px;
+        }
+        .pin-the-hat {
+            display: inline-block;
+            position: relative;
+        }
+        .pin-the-hat img {
+            width: 300px;
+        }
+        .hat {
+            position: absolute;
+            width: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>Happy Birthday Dumboo!</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="games.html">Games</a>
+        <a href="messages.html">Messages</a>
+    </nav>
+    <main>
+        <div class="game">
+            <h2>Pin the Hat on the Shark</h2>
+            <div class="pin-the-hat">
+                <img src="shark-game.png" alt="Shark Game">
+                <img src="hat.png" alt="Hat" class="hat">
+            </div>
+        </div>
+    </main>
+    <script>
+        const hat = document.querySelector('.hat');
+        document.querySelector('.pin-the-hat').addEventListener('click', (e) => {
+            hat.style.left = `${e.clientX - 25}px`;
+            hat.style.top = `${e.clientY - 25}px`;
+        });
+    </script>
+</body>
+</html>
